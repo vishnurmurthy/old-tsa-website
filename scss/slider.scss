@@ -1,0 +1,322 @@
+$primary: #005DAA;
+$primary-fade: rgba($primary, .9);
+$secondary: #EE3524;
+$secondary-fade: rgba($secondary, .9);
+$white: #FFFFFF;
+$white-light: rgba($white, .1);
+$white-transparent: rgba($white, 0);
+$black: black;
+$black-dark: rgba($black, .9);
+$black-deep: #333333;
+$black-fade: rgba($black, .65);
+$black-transparent: rgba($black, 0);
+$black-light: rgba($black, .1);
+$black-medium: rgba($black, .25);
+$secondary-medium: rgba($secondary, .25);
+$secondary-light: rgba($secondary, .1);
+$secondary-transparent: rgba($secondary, 0);
+$header-font-stack: "Martel Sans", sans-serif;
+$body-font-stack: "Magra", sans-serif;
+$transition-fast: 200ms;
+$transition-medium: 400ms;
+$ease-smooth: cubic-bezier(.5, 0, .5, 1);
+$fade: .65;
+$multipage-transition: 400ms;
+$transition-slow: 800ms;
+$ease-in-heavy: cubic-bezier(.2, 0, 1, .35);
+$ease-out-heavy: cubic-bezier(0, .2, .35, 1);
+
+.sequence-canvas {
+	font-family: $body-font-stack;
+
+	overflow: hidden;
+
+	* {
+		transition-duration: $transition-slow;
+	}
+
+	li {
+		list-style-type: none;
+		display: block;
+		position: absolute;
+		left: 0px;
+		top: 0px;
+		right: 0px;
+		bottom: 0px;
+		overflow: hidden;
+	}
+
+	.animate-in {
+		&#welcome {
+			background: $white;
+			
+			#tsa-logo {
+				right: 50%;
+			}
+
+			#cube {
+				right: 30%;
+			}
+
+			#tj-logo {
+				right: 10%;
+			}
+
+			#welcome-text {
+				bottom: 10%;
+			}
+		}
+
+		&#renovation {
+			#tj-reno-sketch{
+				top: 0%;
+				opacity: 1;
+			}
+
+			#new-tjhsst {
+				left: 5%;
+			}
+
+			#read-more {
+				right: 5%;
+			}
+		}
+
+		&#spintwo {
+			#spintwo-bg {
+				right: -5%;
+				opacity: 1;
+			}
+
+			#spintwo-fg {
+				left:  40%;
+			}
+
+			#spintwo-title {
+				top: 0px;
+			}
+
+			#read-more {
+				right: 5%;
+			}
+		}
+	}
+
+	.animate-out {
+		&#welcome {
+			#tsa-logo {
+				right: -50%;
+			}
+
+			#cube {
+				right: -50%;
+			}
+
+			#tj-logo {
+				right: -50%;
+			}
+		}
+
+		&#renovation {
+			#tj-reno-sketch{
+				transition-delay: 400ms;
+			}
+
+			#new-tjhsst {
+				transition-delay: 0ms;
+			}
+
+			#read-more {
+				transition-delay: 0ms;
+			}
+		}
+
+		&#spintwo {
+			#spintwo-bg {
+				right: -10%;
+				transition-delay: 600ms;
+			}
+
+			#spintwo-fg {
+				left: 160%;
+				transition-delay: 600ms;
+			}
+
+			#spintwo-title {
+				transition-delay: 0ms;
+			}
+
+			#read-more {
+				transition-delay: 0ms;
+			}
+		}
+	}
+
+	#welcome {
+		background: $white;
+		transition-duration: 200ms;
+		
+		#tsa-logo {
+			position: absolute;
+			width: 40%;
+			top: 10%;
+			right: 120%;
+			transition-delay: 400ms;
+		}
+
+		#cube {
+			position: absolute;
+			font-size: 8em;
+			color: $black-fade;
+			top: 30%;
+			right: 120%;
+			transition-delay: 200ms;
+		}
+
+		#tj-logo {
+			position: absolute;
+			top: 10%;
+			width: 25%;
+			right: 120%;
+			transition-delay: 0ms;
+		}
+
+		#welcome-text {
+			position: absolute;
+			bottom: -25%;
+			left: 40%;
+			font-size: 1.6em;
+			transition-delay: 800ms;
+			background: $secondary;
+			color: $white;
+			padding: .2em .4em;
+		}
+	}
+
+	#renovation {
+		#tj-reno-sketch {
+			position: absolute;
+			left: 0%;
+			top: 25%;
+			opacity: 0;
+			width: 100%;
+		}
+
+		#new-tjhsst {
+			position:absolute;
+			top: 5%;
+			left: -75%;
+			background: $primary;
+			color: $white;
+			font-size: 2em;
+			padding: .2em .4em;
+			transition-delay: 200ms;
+		}
+
+		#read-more {
+			position: absolute;
+			bottom: 5%;
+			right: -60%;
+			background: $secondary;
+			color: $white;
+			font-size: 1.2em;
+			padding: .2em .4em;
+			transition-delay: 600ms;
+		}
+	}
+
+	#spintwo {
+		#spintwo-bg {
+			position: absolute;
+			top: -10%;
+			right: 0%;
+			opacity: 0;
+			width: 120%;
+		}
+
+		#spintwo-fg {
+			position: absolute;
+			bottom: 35%;
+			left: -80%;
+			transition-delay: 300ms;
+			transition-duration: 500ms;
+
+			#spintwo-ground1 {
+				position: absolute;
+				left: 0px;
+				top: 0px;
+				width: 1.5 * 128px;
+			}
+
+			#spintwo-ground2 {
+				position: absolute;
+				left: -260px;
+				top: 120px;
+				width: 1.5 * 128px;
+			}
+
+			#spintwo-ground3 {
+				position: absolute;
+				left: 240px;
+				top: 40px;
+				width: 1.5 * 128px;
+			}
+
+			#spintwo-player {
+				position: absolute;
+				bottom: -2px;
+				left: 1.5 * 32px;
+				width: 1.5 * 64px;
+			}
+		}
+
+		#spintwo-title {
+			position: absolute;
+			right: 2em;
+			top: -30%;
+			transition-delay: 800ms;
+			width: 40%;
+		}
+
+		#read-more {
+			position: absolute;
+			bottom: 5%;
+			right: -65%;
+			background: $primary;
+			color: $white;
+			font-size: 1.2em;
+			padding: .2em .4em;
+			transition-delay: 1000ms;
+		}
+	}
+}
+
+.seq-next,
+.seq-prev {
+	background: $black-fade;
+	color: $white;
+	font-size: 2em;
+	position: absolute;
+	bottom: 0px;
+	cursor: pointer;
+	width: 1.4em;
+	height: 1.4em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 8;
+	opacity: .4;
+	transition-duration: 400ms;
+
+	.slider:hover & {
+		opacity: 1;
+	}
+}
+
+.seq-next {
+	right: 0px;
+}
+
+.seq-prev {
+	left: 0px;
+}
